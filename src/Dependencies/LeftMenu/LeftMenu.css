@@ -1,0 +1,170 @@
+.left-menu {
+  position: fixed;
+  top: 100px; /* Adjust based on your navbar height */
+  left: -200px; /* Hidden by default */
+  width: 200px;
+  height: calc(100% - 60px); /* Full height minus navbar height */
+  transition: left 0.3s ease; /* Transition for sliding */
+  padding: 10px;
+  box-sizing: border-box;
+  overflow-y: auto; /* Allow vertical scrolling */
+  z-index: 1000; /* Layer above other content */
+}
+
+.left-menu.visible {
+  left: 0; /* Slide in */
+}
+
+.menu-visible {
+  margin-left: 200px; /* Push main content to the right */
+}
+
+/* Hide the default scrollbar */
+.left-menu::-webkit-scrollbar {
+  display: none; /* For Chrome, Safari, and Opera */
+}
+
+/* Optional: Add a custom scrollbar */
+.left-menu::-webkit-scrollbar-thumb {
+  background: rgba(128, 0, 128, 0.5); /* Color of the scrollbar */
+  border-radius: 10px; /* Round edges for the scrollbar */
+}
+
+/* Add styles for the scrollbar track (optional) */
+.left-menu::-webkit-scrollbar-track {
+  background: rgba(255, 255, 255, 0.8); /* Color of the scrollbar track */
+}
+
+.left-menu-options {
+  padding: 0;
+  margin: 0;
+  list-style: none;
+}
+
+.left-menu-options li {
+  margin-bottom: 5px;
+}
+
+.menu-link {
+  color: rgb(104, 100, 100) !important;
+  text-decoration: none !important;
+  font-size: 13px;
+  font-weight: 600;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 8px;
+  border-radius: 6px;
+}
+
+.menu-link:hover {
+  background-color: rgba(128, 0, 128, 0.1);
+}
+
+/* Active state for the clicked option */
+.menu-link.active {
+  background-color: purple;
+  color: white !important; /* Change text color to white when active */
+}
+
+.menu-content {
+  display: flex;
+  align-items: center;
+}
+
+.menu-icon {
+  margin-right: 10px;
+  color: #8e8d8d;
+}
+
+.notification-badge {
+  display: flex;
+  align-items: center;
+}
+
+.circle {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 25px;
+  height: 25px;
+  border-radius: 50%;
+  background-color: white;
+  color: rgb(104, 100, 100);
+  font-size: 12px;
+}
+
+/* Active state for the badge */
+.badge-active .circle {
+  background-color: #d3b1e0; /* Grey-purplish color for active state */
+  color: white;
+}
+
+.dropdown {
+  background-color: white;
+  border-radius: 8px;
+  margin-top: 5px;
+  padding: 10px;
+  border: 1px solid #ccc;
+}
+
+.dropdown h4 {
+  margin: 0;
+  color: #8e8d8d;
+  font-weight: 600;
+}
+
+.dropdown hr {
+  margin: 5px 0;
+}
+
+/* User */
+.user-detail {
+  display: flex;
+  align-items: center;
+  margin: 5px 0;
+}
+
+.profile-pic {
+  width: 30px; /* Adjust size as needed */
+  height: 30px;
+  border-radius: 50%;
+  margin-right: 10px;
+}
+
+.user-name {
+  margin-right: 10px;
+  color: rgb(104, 100, 100);
+  font-size: 12px;
+  font-weight: 500;
+}
+
+.user-status {
+  color: rgb(104, 100, 100);
+  font-size: 12px;
+  font-weight: 500;
+  margin-left: 1rem;
+}
+
+@media (max-width: 768px) {
+  .left-menu {
+    display: none; /* Default hidden on smaller screens */
+    position: absolute;
+    top: 60px; /* Adjust this value to position the menu below your buttons */
+    left: -100%; /* Initially off-screen */
+    height: calc(100% - 60px); /* Full height minus the top offset */
+    width: 100%; /* Full width */
+    z-index: 2000; /* Higher z-index to be on top */
+    border: none; /* Remove border */
+    transition: left 0.3s ease; /* Transition for sliding */
+  }
+
+  .left-menu.visible {
+    left: 0; /* Slide in when visible */
+    display: block;
+  }
+
+  .menu-visible {
+    margin-left: 0; /* Remove margin to allow full width */
+  }
+}

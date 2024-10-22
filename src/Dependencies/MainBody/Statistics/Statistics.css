@@ -1,0 +1,100 @@
+.statistics-chart-container {
+  max-width: 2400px; /* Set a larger max width for the container */
+  width: 100%; /* Allow full width usage */
+  padding: 20px; 
+  margin: 0 auto; /* Center the container */
+  box-sizing: border-box; /* Ensure padding doesn't affect width */
+}
+
+.statistics-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: white;
+  border-radius: 10px 10px 0 0;
+  padding: 10px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  margin: 10px 0 0px 0;
+  width: 100%; /* Ensure full width for the header */
+  position: relative; /* Position for dropdown */
+  flex-wrap: wrap; /* Allow wrapping */
+}
+
+.statistics-header h2 {
+  margin: 0;
+  font-size: 1rem;
+  color: #8e8d8d;
+}
+
+.statistics-chart-options {
+  display: flex; /* Arrange buttons in a row */
+  gap: 10px; /* Space between buttons */
+  flex-wrap: nowrap; /* Allow wrapping */
+  margin-right: 40px;
+}
+
+.statistics-chart-options button {
+  background: none;
+  border: none;
+  color: #8e8d8d;
+  font-size: 14px;
+  font-weight: 600;
+  padding: 10px;
+  cursor: pointer;
+  position: relative;
+  transition: color 0.3s; 
+}
+
+.statistics-chart-options button::after {
+  content: '';
+  position: absolute;
+  height: 2px;
+  width: 100%;
+  bottom: 0;
+  left: 0;
+  background-color: purple;
+  transform: scaleX(0);
+  transition: transform 0.3s ease;
+}
+
+.statistics-chart-options button:hover {
+  color: purple;
+}
+
+.statistics-chart-options button:hover::after {
+  transform: scaleX(1);
+}
+
+.active-option {
+  display: block;
+  width: 100%;
+  background: none;
+  text-align: center;
+  border: 1px solid #8e8d8d;
+  border-radius: 5px;
+}
+
+@media (max-width: 900px) {
+  .statistics-chart-options {
+    flex-direction: row; /* Maintain row layout for small screens */
+    margin-top: 20px; /* Adjust the space as needed */
+  }
+
+  .statistics-chart-options button:not(.active-option) {
+    display: none; /* Hide other buttons on small screens */
+  }
+
+  .dropdown-menu button {
+    display: block;
+    width: 100%;
+    padding: 8px 12px;
+    border: none;
+    background: #f9f9f9;
+    text-align: left;
+    cursor: pointer;
+  }
+
+  .dropdown-menu button:hover {
+    background: #e0e0e0;
+  }
+}

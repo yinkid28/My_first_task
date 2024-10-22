@@ -1,0 +1,81 @@
+.first-section-container {
+  display: flex;
+  flex-wrap: wrap; /* Allow wrapping for responsive design */
+  gap: 20px; /* Add space between boxes */
+  padding-left: 30px;
+  
+}
+
+.first-section-item {
+  flex: 0 0 calc(30% - 20px); /* Set width to about 30% of the container minus the gap */
+  min-width: none; /* Minimum width for boxes */
+  max-width: 120px; /* Keep max-width to maintain size */
+  width: 100%;
+  background-color: transparent; /* Remove background color */
+  padding: 10px; /* Padding */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Keeps the shadow */
+  border-radius: 10px; /* Keep border-radius for rounded corners */
+}
+
+.box-header {
+  display: flex;
+  font-size: 11px;
+  justify-content: space-between; /* Align title and ellipsis to opposite ends */
+  align-items: center; /* Center align vertically */
+}
+
+.box-number {
+  text-align: center; /* Center the number */
+  font-weight: bold; /* Make the number bold */
+}
+
+.box-footer {
+  display: flex;
+  justify-content: space-between; /* Align buttons to edges */
+  margin-top: 10px; /* Space above buttons */
+}
+
+.add-button {
+  background-color: transparent; /* Transparent background */
+  border: none; /* Remove border */
+  border-radius: 50%; /* Make it circular */
+  padding: 5px; /* Smaller size */
+  cursor: pointer; /* Pointer on hover */
+  width: 30px; /* Set width */
+  height: 30px; /* Set height */
+  display: flex;
+  align-items: center;
+  justify-content: center; /* Center icon */
+  margin-left: 5px; /* Add left margin */
+}
+
+.view-all-button {
+  background-color: transparent; /* Transparent background */
+  border: 1px solid rgba(0, 0, 0, 0.2); /* Optional border */
+  border-radius: 15px; /* Very rounded edges */
+  padding: 5px 10px; /* Smaller size */
+  cursor: pointer; /* Pointer on hover */
+  font-size: 0.8em; /* Reduce font size */
+  margin-right: 5px; /* Add right margin */
+}
+
+/* Responsive adjustments */
+@media (max-width: 1050px) {
+  .first-section-item {
+    flex: 0 0 calc(45% - 20px); /* Adjust to about two boxes per row on smaller screens */
+    max-height: 130px;
+  }
+}
+
+@media (max-width: 900px) {
+  .first-section-item {
+    max-width: 160px;
+    padding: 20px;
+  }
+}
+
+@media (max-width: 500px) {
+  .first-section-item {
+    flex: 0 0 100%; /* One box per row on very small screens */
+  }
+}

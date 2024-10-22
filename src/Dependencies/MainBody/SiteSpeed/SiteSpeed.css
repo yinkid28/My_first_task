@@ -1,0 +1,172 @@
+.site-speed-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: center;
+  max-width: 100%;
+  margin: 0 auto;
+  margin-bottom: 20px;
+  padding: 10px;
+}
+
+.site-speed-header {
+  display: flex;
+  justify-content: space-between; /* Align header and options */
+  align-items: center;
+  width: 100%;
+  background-color: white;
+  border-radius: 10px 10px 0 0;
+  padding: 10px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  margin-bottom: 2px;
+}
+
+.site-speed-header h2 {
+  color: #8e8d8d;
+  font-size: 15px;
+  flex-grow: 1; /* Take up remaining space */
+  margin-right: 0; /* Remove fixed margin */
+}
+
+.site-speed-chart-options {
+  margin-right: 0; /* Align with the chart */
+  flex-grow: 1;
+  justify-content: flex-end; /* Move buttons to the end */
+}
+
+.site-speed-chart-and-details {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background-color: white;
+  border-radius: 0 0 10px 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  width: 100%;
+}
+
+.site-speed-chart-container {
+  position: relative;
+  width: 100%; /* Full width to be responsive */
+  max-width: 200px; /* Maximum size for larger screens */
+  height: 200px;
+  display: flex; /* Use flexbox to center contents */
+  align-items: center; /* Center vertically */
+  justify-content: center; /* Center horizontally */
+}
+
+.site-speed-inside-circle {
+  position: absolute; /* Keep it absolute to center it */
+  top: 50%; /* Center vertically */
+  left: 50%; /* Center horizontally */
+  transform: translate(-50%, -50%); /* Offset by its own width/height */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #333;
+  font-size: 24px;
+  font-weight: bold;
+}
+
+.site-speed-details {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr); /* 2 columns */
+  grid-gap: 30px; /* Space between items */
+  margin-right: 2rem;
+  margin-bottom: 10px;
+}
+
+.site-speed-item {
+  background-color: #f2f2f2;
+  color: #8e8d8d;
+  border-radius: 10px;
+  padding: 10px;
+  text-align: center; /* Center content */
+  cursor: pointer;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  transition: background-color 0.3s;
+}
+
+.site-speed-item:hover {
+  background-color: #e0e0e0;
+}
+
+.site-speed-chart-options button {
+  background: none;
+  border: none;
+  font-size: 12px;
+  font-weight: 600;
+  padding: 10px;
+  cursor: pointer;
+  position: relative;
+  color: #8e8d8d;
+  transition: color 0.3s;
+}
+
+.site-speed-chart-options button:hover {
+  color: purple;
+}
+
+.site-speed-chart-options button::after {
+  content: '';
+  position: absolute;
+  height: 2px;
+  width: 100%;
+  bottom: 0;
+  left: 0;
+  background-color: purple;
+  transform: scaleX(0);
+  transition: transform 0.3s ease;
+}
+
+.site-speed-chart-options button:hover::after {
+  transform: scaleX(1);
+}
+
+@media (max-width: 768px) {
+  .site-speed-container {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .site-speed-chart-and-details {
+    flex-direction: column; /* Stack chart and details vertically */
+    width: 100%;
+    padding: 0; /* Ensure no additional padding */
+  }
+
+  .site-speed-chart-container {
+    width: 100%; /* Full width for small screens */
+    height: auto;
+    order: 1; /* Ensure the circle comes first */
+  }
+
+  .site-speed-inside-circle {
+    margin-bottom: 20px; /* Add space below the circle */
+  }
+
+  .site-speed-details {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr); /* Two boxes per row */
+    grid-gap: 20px;
+    width: 100%; /* Full width on small screens */
+    margin: 0 auto; /* Center the grid */
+    order: 2; /* Ensure this comes after the circle */
+    padding: 0; /* Ensure no additional padding */
+  }
+}
+
+@media (max-width: 480px) {
+  .site-speed-chart-container {
+    width: 100%;
+  }
+
+  .site-speed-details {
+    grid-template-columns: repeat(2, 1fr); /* Keep two boxes in a row */
+    grid-gap: 15px; /* Adjust gap for smaller screens */
+  }
+}
+
+/* Box-sizing rule */
+*, *::before, *::after {
+  box-sizing: border-box;
+}

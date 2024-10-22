@@ -1,0 +1,93 @@
+.latest-events {
+  display: flex;
+  flex-direction: column;
+  flex-wrap: nowrap; /* Prevent wrapping */
+  justify-content: space-between;
+  padding: 0 10px 10px 10px;
+  margin-bottom: 10px;
+  margin-top: 0;
+  min-height: 685px; /* Adjust this value to match the left side boxes */
+}
+
+.events-header {
+  padding: 20px;
+  font-size: 11px;
+  justify-content: space-between;
+  border-bottom: 1px solid #ccc; /* Optional: Keep for separation */
+  background-color: white; /* Background color for header */
+  border-radius: 10px 10px 0 0;
+  margin-bottom: 2px;
+  display: flex;
+}
+
+.events-header h2 {
+  margin: 0;
+  font-size: 1rem;
+  color: #8e8d8d;
+}
+
+.events-body {
+  padding: 40px 10px 80px 10px;
+  display: flex;
+  flex-direction: column;
+  border-radius: 0 0 10px 10px;
+  background-color: white;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  gap: 15px;
+  flex-grow: 1; /* Ensure body grows to fill available space */
+}
+
+.event-item {
+  display: flex;
+  position: relative;
+  font-weight: 500;
+  color: #8e8d8d;
+  font-size: 13px;
+}
+
+.event-left {
+  position: relative;
+  margin-right: 15px;
+}
+
+.event-icon {
+  width: 40px;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: rgb(206, 204, 204);
+  border-radius: 50%;
+  font-size: 1.2rem;
+  color: #333;
+}
+
+.event-right {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.event-details {
+  display: flex; /* Set as flexbox */
+  gap: 10px;
+  align-items: center; /* Align time, option, and user */
+  color: #838282;
+}
+
+.event-time,
+.event-option,
+.event-user {
+  font-size: 11.5px;
+  background-color: rgb(206, 204, 204);
+  padding: 5px 10px;
+  border-radius: 25px;
+  margin-top: 15px ;
+  margin-bottom: 18px ;
+}
+
+.message {
+  margin-top: 8px; /* Space between details and message */
+  font-size: 12px;
+  color: #8e8d8d;
+}

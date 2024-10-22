@@ -1,0 +1,39 @@
+/* Main Body CSS */
+.main-grid {
+  display: flex;
+  margin-right: 10px;
+  margin-top: 10rem;
+  gap: 20px; /* Space between columns */
+  width: 100%; /* Full width */
+}
+
+.first-column, .right-column {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  flex: 1; /* Each column takes up available space */
+}
+
+/* Responsive layout - Stack columns vertically when screen width is smaller */
+@media (max-width: 900px) {
+  .main-grid {
+    flex-direction: column; /* Stack the columns vertically */
+  }
+
+  .first-column, .right-column {
+    width: 100%; /* Each column takes full width */
+  }
+}
+
+/* Adjust responsiveness for FirstSection boxes */
+@media (max-width: 800px) {
+  .first-section-item {
+    flex: 0 0 calc(50% - 20px); /* Two boxes per row */
+  }
+}
+
+@media (max-width: 500px) {
+  .first-section-item {
+    flex: 0 0 100%; /* One box per row */
+  }
+}
